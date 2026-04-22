@@ -84,7 +84,7 @@ function applyVisualImage(sceneId) {
   }
 
   activeVisualImage = imagePath;
-  elements.visualStage.style.setProperty("--scene-visual-image", `url("${imagePath}")`);
+  elements.visualStage.style.setProperty("--scene-visual-image", `url("../${imagePath}")`);
 }
 
 async function animateSceneImageChange(nextSceneId) {
@@ -103,7 +103,7 @@ async function animateSceneImageChange(nextSceneId) {
   await wait(220);
 
   activeVisualImage = imagePath;
-  elements.visualStage.style.setProperty("--scene-visual-image", `url("${imagePath}")`);
+  elements.visualStage.style.setProperty("--scene-visual-image", `url("../${imagePath}")`);
 
   elements.visualStage.classList.remove("is-visual-exit");
   elements.visualStage.classList.add("is-visual-enter");
