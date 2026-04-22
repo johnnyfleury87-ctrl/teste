@@ -17,6 +17,12 @@ const masculineHints = [
   "gabriel",
   "daniel",
   "julien",
+  "pierre",
+  "jean",
+  "luca",
+  "reed",
+  "grandpa",
+  "brice",
 ];
 
 const naturalHints = ["natural", "premium", "enhanced", "neural", "google", "microsoft"];
@@ -78,8 +84,9 @@ function scoreVoice(voice) {
     score += 3;
   }
 
-  if (name.includes("female") || name.includes("femme")) {
-    score -= 3;
+  const feminineHints = ["female", "femme", "amelie", "amélie", "marie", "alice", "lea", "léa", "claire", "elsa", "audrey", "isabelle", "juliette"];
+  if (feminineHints.some((hint) => name.includes(hint))) {
+    score -= 20;
   }
 
   return score;
