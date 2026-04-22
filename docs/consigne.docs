@@ -1,0 +1,428 @@
+OBJECTIF GLOBAL
+
+Je veux créer une application web interactive de candidature / présentation professionnelle.
+L’expérience doit être élégante, fluide, moderne, sobre, sans musique, orientée démonstration de valeur.
+L’utilisateur doit pouvoir choisir des textes / thèmes, et un personnage à l’écran doit parler en fonction du choix.
+Le but n’est pas de faire un “site fun”, mais une expérience professionnelle interactive qui présente ma vision, mes compétences, et mes démonstrateurs.
+
+IMPORTANT
+- Ne casse rien de l’existant.
+- Travaille étape par étape.
+- Après chaque grande étape, résume ce qui a été fait, quels fichiers ont été créés/modifiés, et ce qu’il reste à faire.
+- Si un point est ambigu, prends l’option la plus simple, robuste et maintenable.
+- Le projet doit rester 100% statique et déployable sur GitHub Pages.
+- Aucune dépendance serveur.
+- Aucune base de données.
+- Pas de backend.
+- Pas de framework lourd si non nécessaire.
+- Priorité à HTML, CSS, JavaScript vanilla modulaire.
+- Code propre, lisible, commenté intelligemment, sans sur-ingénierie.
+
+BUT PRODUIT
+
+Créer une expérience immersive de présentation avec :
+1. un écran d’accueil premium,
+2. un personnage / avatar visuel présent à l’écran,
+3. une zone de texte ou de choix,
+4. un moteur de scènes,
+5. une synthèse vocale pilotée par le texte choisi,
+6. des transitions fluides,
+7. une structure réutilisable pour ajouter facilement d’autres scènes plus tard.
+
+CONTRAINTE DE TON / DIRECTION ARTISTIQUE
+
+Je veux un rendu :
+- premium
+- moderne
+- professionnel
+- sobre
+- interactif
+- sans musique
+- sans surcharge
+- sans effet kitsch
+- sans animations excessives
+- avec une sensation “produit / innovation / candidature intelligente”
+
+Le style doit rappeler :
+- une landing page haut de gamme
+- une interface de démonstration
+- une expérience guidée
+- pas un jeu vidéo
+- pas un site gadget
+- pas un CV classique
+
+EXPERIENCE ATTENDUE
+
+SCENE 1 - INTRO / HERO
+- Plein écran.
+- Fond visuel propre, avec image ou vidéo de fond possible.
+- Overlay léger pour lisibilité.
+- Présence d’un personnage ou avatar à l’écran.
+- Titre fort.
+- Sous-titre clair.
+- Bouton “Commencer”.
+- Apparition fluide des éléments.
+- Pas de scroll forcé dans cette première scène.
+
+SCENE 2 - MENU DE CHOIX
+Quand l’utilisateur clique sur “Commencer” :
+- afficher une interface de sélection claire,
+- proposer 3 à 5 choix maximum,
+- chaque choix correspond à un thème de présentation.
+
+Exemples de choix :
+- Qui je suis
+- Ma vision logistique
+- Cas concret
+- Démonstration interactive
+- Pourquoi ma candidature est différente
+
+Chaque choix doit :
+- avoir un titre,
+- avoir un court descriptif,
+- être cliquable,
+- déclencher une scène + un texte parlé.
+
+SCENE 3 - PRESENTATION PARLEE
+Quand un choix est cliqué :
+- le personnage reste visible ou revient à l’écran,
+- un texte s’affiche,
+- la synthèse vocale lit ce texte,
+- l’utilisateur voit clairement quel choix est actif,
+- il doit pouvoir :
+  - lire
+  - écouter
+  - passer au choix suivant
+  - revenir au menu principal
+  - rejouer la lecture
+
+SCENE 4 - DEMONSTRATION / PREUVE
+Pour certains choix, prévoir une zone de contenu enrichie :
+- texte argumenté,
+- image,
+- vidéo,
+- capture écran,
+- mini démonstration visuelle,
+- lien éventuel vers un prototype ou projet.
+
+L’idée est que certains parcours ne soient pas seulement “du texte lu”, mais une vraie preuve de compétence.
+
+SCENE 5 - CONCLUSION
+Prévoir une scène finale avec :
+- message de conclusion
+- invitation à échanger
+- CTA discret
+- éventuellement bouton de contact ou lien externe
+
+COMPORTEMENT DU PERSONNAGE / AVATAR
+
+Je veux une présence visuelle humaine ou semi-humaine à l’écran.
+Au minimum :
+- zone dédiée à l’avatar,
+- possibilité d’animer légèrement l’entrée,
+- effet vivant sobre,
+- pas d’animation ridicule.
+
+Version initiale acceptable :
+- image statique ou légère animation CSS,
+- synchronisée avec le texte et la prise de parole.
+
+Version améliorée possible plus tard :
+- bouche / état “parle / ne parle pas”
+- changement léger d’expression
+- variation d’état selon la scène
+
+IMPORTANT :
+- Commencer par une version simple mais propre.
+- Préparer l’architecture pour améliorer l’avatar ensuite.
+
+SPEECH / VOIX
+
+Je veux utiliser la synthèse vocale du navigateur dans un premier temps.
+Exigences :
+- langue française par défaut,
+- fonction centralisée pour parler un texte,
+- possibilité d’arrêter la lecture en cours,
+- possibilité de relancer la lecture,
+- empêcher les superpositions de voix,
+- état visuel “en train de parler”,
+- fallback propre si la voix n’est pas disponible.
+
+Créer un module JS dédié pour cela.
+
+EXPERIENCE UTILISATEUR
+
+Je veux :
+- interface claire
+- navigation très simple
+- maximum 3 à 5 choix visibles en même temps
+- boutons lisibles
+- responsive desktop first mais mobile compatible
+- texte lisible
+- contraste propre
+- transitions douces
+- temps de chargement rapide
+
+Je ne veux pas :
+- popup agressive
+- animation flashy
+- musique
+- autoplay sonore agressif sans action utilisateur
+- surcharge d’informations
+
+ARCHITECTURE TECHNIQUE SOUHAITEE
+
+Créer une base de projet propre, par exemple :
+
+/index.html
+/assets/
+  /images/
+  /video/
+  /audio/
+  /data/
+/css/
+  base.css
+  layout.css
+  components.css
+  animations.css
+/css/style.css
+/js/
+  app.js
+  state.js
+  scenes.js
+  speech.js
+  ui.js
+  avatar.js
+  router.js (si utile)
+
+Ou une variante plus simple, mais toujours modulaire et claire.
+
+EXIGENCES DE CODE
+
+- HTML sémantique.
+- CSS structuré.
+- JavaScript modulaire.
+- Pas de code inline inutile.
+- Pas de duplication.
+- Pas de logique entassée dans un seul fichier.
+- Utiliser des data structures propres pour définir les scènes.
+
+Je veux une structure de scènes de ce type :
+
+const scenes = {
+  intro: {...},
+  menu: {...},
+  whoAmI: {...},
+  logisticsVision: {...},
+  caseStudy: {...},
+  demo: {...},
+  conclusion: {...}
+};
+
+Chaque scène doit pouvoir définir :
+- id
+- title
+- subtitle
+- body
+- speechText
+- image/video optionnelle
+- actions / boutons
+- next / back
+- layout type
+
+L’objectif est que l’ajout d’une nouvelle scène soit simple et rapide.
+
+FONCTIONNALITES A IMPLEMENTER
+
+PHASE 1 - SOCLE
+1. Créer la structure des fichiers.
+2. Créer la page principale.
+3. Créer le layout plein écran.
+4. Créer le composant avatar.
+5. Créer le menu de choix.
+6. Créer le moteur de scènes.
+7. Créer le module speech avec speechSynthesis.
+8. Ajouter navigation suivante / retour / replay audio.
+
+PHASE 2 - QUALITE VISUELLE
+1. Améliorer typographie.
+2. Améliorer espacements.
+3. Ajouter micro-animations.
+4. Ajouter états hover / active / selected.
+5. Ajouter transitions de scène.
+6. Ajouter état visuel pendant la lecture vocale.
+
+PHASE 3 - CONTENU
+1. Préparer les scènes avec faux contenu propre.
+2. Prévoir un format facile à modifier pour remplacer les textes plus tard.
+3. Préparer un système centralisé pour les contenus.
+
+PHASE 4 - ROBUSTESSE
+1. Gérer clics rapides.
+2. Stopper la voix précédente avant nouvelle lecture.
+3. Gérer erreurs speech synthesis.
+4. Gérer fallback si navigateur incompatible.
+5. Tester responsive.
+6. Vérifier accessibilité de base.
+
+STYLE VISUEL DETAILLE
+
+Je veux :
+- fond clair ou légèrement texturé, ou image de fond premium avec overlay
+- cartes ou panneaux semi-transparents si utile
+- coins arrondis élégants
+- ombres douces
+- palette neutre et sophistiquée
+- accent de couleur subtil
+- hiérarchie typographique claire
+- composition propre avec beaucoup d’air
+
+Je ne veux pas :
+- couleurs criardes
+- surcharge
+- design gaming
+- effet neon excessif
+- style cheap
+
+INTERACTION DETAILLEE
+
+Au clic sur un choix :
+1. arrêter la voix précédente si elle est active
+2. mettre à jour l’état global
+3. afficher la nouvelle scène
+4. lancer une animation douce
+5. démarrer la lecture du texte de la scène
+6. mettre le bouton actif en évidence
+7. afficher controls :
+   - retour menu
+   - relire
+   - scène suivante si prévue
+
+ACCESSIBILITE / QUALITE
+
+Prévoir :
+- boutons accessibles
+- aria-label si nécessaire
+- navigation clavier minimale
+- contraste correct
+- textes lisibles
+- pas de dépendance au son seul
+- contenu visible aussi sans audio
+
+COMPATIBILITE / DEPLOIEMENT
+
+Le projet doit fonctionner :
+- en local
+- sur GitHub Pages
+- sans backend
+- sans configuration complexe
+
+Prévoir :
+- chemins relatifs corrects
+- aucun appel API obligatoire
+- aucun secret
+- aucun token
+
+AJOUTER UNE DOCUMENTATION
+
+Créer un README.md contenant :
+- objectif du projet
+- structure des fichiers
+- comment lancer en local
+- comment modifier les textes
+- comment ajouter une scène
+- comment publier sur GitHub Pages
+
+Créer aussi un fichier de documentation rapide pour la personnalisation du contenu.
+
+PLAN DE TRAVAIL ATTENDU DE COPILOT
+
+Je veux que tu procèdes exactement ainsi :
+
+ETAPE 1
+Analyser le besoin et proposer l’architecture des fichiers.
+Ne pas coder tout d’un coup.
+Commencer par exposer le plan.
+
+ETAPE 2
+Créer le squelette HTML/CSS/JS minimal fonctionnel.
+
+ETAPE 3
+Implémenter le système de scènes.
+
+ETAPE 4
+Implémenter la synthèse vocale.
+
+ETAPE 5
+Implémenter l’avatar visuel.
+
+ETAPE 6
+Améliorer le design.
+
+ETAPE 7
+Ajouter la navigation complète.
+
+ETAPE 8
+Documenter le projet.
+
+Après chaque étape :
+- expliquer ce qui a été fait
+- lister les fichiers modifiés
+- signaler les points à tester
+- attendre validation logique avant grosse refonte
+
+REGLES STRICTES
+
+- N’écrase pas tout si une petite correction suffit.
+- Préfère des modifications ciblées.
+- Si tu proposes une dépendance externe, justifie-la.
+- Si une animation est ajoutée, elle doit être discrète.
+- Si une structure peut être réutilisable, rends-la réutilisable.
+- Toujours privilégier la maintenabilité.
+- Pas de code mort.
+- Pas de fichiers inutiles.
+- Pas de complexité prématurée.
+
+CONTENU D’EXEMPLE A PREVOIR
+
+Préparer des scènes de démonstration avec un contenu temporaire professionnel en français :
+
+1. QUI JE SUIS
+Texte de démonstration :
+“Je m’appelle [Nom]. Mon approche relie terrain, organisation, logique métier et vision produit. Cette présentation interactive vous permet de découvrir non seulement mon parcours, mais aussi ma manière de structurer des solutions concrètes.”
+
+2. MA VISION
+“Je considère la performance comme le résultat d’un lien intelligent entre opérations, données, outils et usages. Mon objectif n’est pas seulement d’analyser, mais de rendre visible ce qui permet de mieux décider.”
+
+3. CAS CONCRET
+“Au lieu de décrire uniquement des compétences, je préfère montrer une logique, une méthode, et des démonstrateurs capables d’illustrer un besoin réel.”
+
+4. DEMONSTRATION
+“Cette expérience est pensée comme une passerelle entre une candidature classique et une démonstration produit. Elle montre ma capacité à concevoir, structurer et faire comprendre.”
+
+5. CONCLUSION
+“Si cette approche résonne avec votre vision, je serais ravi d’en discuter plus concrètement.”
+
+LIVRABLE FINAL ATTENDU
+
+Je veux un projet propre, publiable sur GitHub Pages, avec :
+- une page interactive
+- un personnage/avatar visible
+- un menu de choix
+- des scènes dynamiques
+- une lecture vocale des textes
+- une navigation simple
+- un design professionnel
+- une structure claire pour évoluer plus tard
+
+IMPORTANT POUR LA FIN
+
+Quand la première version est prête :
+- proposer une deuxième phase d’amélioration
+- sans casser le socle
+- en ajoutant éventuellement :
+  - meilleure animation avatar
+  - intégration vidéo
+  - transitions enrichies
+  - scènes plus complexes
+  - personnalisation du contenu

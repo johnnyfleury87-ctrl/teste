@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Présentation professionnelle interactive, avec scènes dynamiques, photo réelle et synthèse vocale."
+    />
+    <title>Presentation Interactive</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <main class="app-shell" id="app-shell" data-scene="intro">
+        <section class="visual-stage" aria-label="Portrait">
+          <div class="visual-stage__backdrop" aria-hidden="true"></div>
+          <div class="visual-stage__overlay" aria-hidden="true"></div>
+
+          <div class="avatar-card" id="avatar-card" data-speaking="false">
+            <div class="avatar-card__halo" aria-hidden="true"></div>
+            <figure class="avatar-figure">
+              <img
+                class="avatar-figure__photo"
+                src="image/photo.png"
+                width="156"
+                height="197"
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
+                alt="Portrait de Johnny Fleury"
+              />
+            </figure>
+
+            <div class="avatar-card__content">
+              <p class="avatar-card__label">Johnny Fleury</p>
+              <h2 class="avatar-card__name" id="avatar-name">Acheteur e-commerce | Data | Logistique</h2>
+              <div class="avatar-card__chips" aria-label="Etat de la voix">
+                <span class="status-chip status-chip--subtle" id="avatar-voice-chip">Voix en attente</span>
+              </div>
+              <button type="button" id="avatar-moi-btn" class="avatar-moi-btn" aria-expanded="false" aria-controls="avatar-contact-panel">
+                Moi ?
+              </button>
+              <div id="avatar-contact-panel" class="avatar-contact-panel is-collapsed" aria-hidden="true">
+                <div class="avatar-contact-row">📍 415 Route de Champagnole, 39300 Sapois</div>
+                <div class="avatar-contact-row">📞 +33 6 98 54 42 32</div>
+                <div class="avatar-contact-row">✉️ johnny.fleury87@gmail.com</div>
+                <div class="avatar-contact-row">🎂 38 ans</div>
+
+                <button
+                  type="button"
+                  id="avatar-time-travel-btn"
+                  class="avatar-time-travel-btn"
+                  aria-expanded="false"
+                  aria-controls="avatar-time-travel-panel"
+                >
+                  On remonte le temps ?
+                </button>
+
+                <div id="avatar-time-travel-panel" class="avatar-time-travel-panel is-collapsed" aria-hidden="true">
+                  <div id="cinematic-flashback" class="cinematic-flashback is-hidden" aria-hidden="true">
+                    <figure class="cinematic-flashback__figure">
+                      <img
+                        class="cinematic-flashback__image"
+                        src="image/bebe.png"
+                        alt="Photo d'enfance de Johnny Fleury"
+                      />
+                    </figure>
+                    <p id="cinematic-flashback-line" class="cinematic-flashback__line">Ah non, pas autant</p>
+                  </div>
+
+                  <section id="avatar-retro-journey" class="retro-journey" aria-hidden="true" aria-label="Experience complementaire restauration">
+                    <h3 class="retro-journey__title">Experience complementaire - restauration</h3>
+
+                    <article class="retro-journey__item">
+                      <p class="retro-journey__period">2013 - 2018</p>
+                      <h4 class="retro-journey__role">Responsable restauration - Hotel de Ville, Rue</h4>
+                      <ul class="retro-journey__list">
+                        <li>Gestion operationnelle</li>
+                        <li>Encadrement equipe</li>
+                        <li>Approvisionnement et fournisseurs</li>
+                        <li>Suivi des couts et des marges</li>
+                      </ul>
+                    </article>
+
+                    <article class="retro-journey__item">
+                      <p class="retro-journey__period">2011 - 2013</p>
+                      <h4 class="retro-journey__role">Employe restauration</h4>
+                      <ul class="retro-journey__list">
+                        <li>Service client et operations</li>
+                      </ul>
+                    </article>
+
+                    <article class="retro-journey__item">
+                      <p class="retro-journey__period">2008 - 2011</p>
+                      <h4 class="retro-journey__role">Divers etablissements</h4>
+                      <ul class="retro-journey__list">
+                        <li>Experience terrain et polyvalence</li>
+                      </ul>
+                    </article>
+
+                    <article class="retro-journey__item retro-journey__item--formation">
+                      <p class="retro-journey__period">Formation</p>
+                      <ul class="retro-journey__list">
+                        <li>Brevet Professionnel Restaurant</li>
+                        <li>Certificat d'Aptitude Professionnel</li>
+                      </ul>
+                    </article>
+                  </section>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-stage" aria-live="polite">
+          <section id="final-cta-zone" class="final-cta" aria-hidden="true">
+            <button type="button" id="final-cta-button" class="final-cta__button" aria-expanded="false">On y va ?</button>
+            <div id="final-contact-card" class="final-contact" aria-hidden="true">
+              <p class="final-contact__label">Contact direct</p>
+              <a class="final-contact__phone" href="tel:+33698544232">+33 6 98 54 42 32</a>
+            </div>
+          </section>
+
+          <div class="scene-frame">
+            <p class="scene-eyebrow" id="scene-eyebrow"></p>
+            <h1 class="scene-title" id="scene-title"></h1>
+            <p class="scene-subtitle" id="scene-subtitle"></p>
+
+            <section id="autoplay-panel" class="autoplay-panel is-hidden" aria-live="polite">
+              <div class="autoplay-panel__meta">
+                <p id="autoplay-step" class="autoplay-panel__step">Etape 0 sur 6</p>
+                <button type="button" id="autoplay-stop" class="autoplay-stop is-hidden">Stop</button>
+              </div>
+              <div
+                id="autoplay-progress"
+                class="autoplay-progress"
+                role="progressbar"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="0"
+                aria-label="Progression de la presentation"
+              >
+                <span id="autoplay-progress-fill" class="autoplay-progress__fill"></span>
+              </div>
+              <p id="autoplay-message" class="autoplay-panel__message"></p>
+            </section>
+
+            <div class="theme-strip" id="theme-strip" aria-label="Themes disponibles"></div>
+            <div class="scene-body" id="scene-body"></div>
+            <div class="scene-media" id="scene-media"></div>
+            <div class="scene-choices" id="scene-choices"></div>
+            <div class="scene-controls" id="scene-controls"></div>
+
+            <p class="speech-status" id="speech-status" role="status"></p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <noscript>
+      <div class="noscript-banner">
+        Cette experience a besoin de JavaScript pour afficher les scenes et la lecture vocale.
+      </div>
+    </noscript>
+
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>

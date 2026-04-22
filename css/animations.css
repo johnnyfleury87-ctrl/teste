@@ -1,0 +1,271 @@
+.app-shell.is-transitioning .content-stage {
+  animation: scene-fade 320ms ease;
+}
+
+.avatar-contact-panel:not(.is-collapsed) {
+  animation: panel-expand 360ms ease;
+}
+
+.avatar-contact-panel:not(.is-collapsed) .avatar-time-travel-btn {
+  animation: narrative-btn-in 300ms ease;
+}
+
+.cinematic-flashback.is-active .cinematic-flashback__figure {
+  animation: cinematic-photo-in 460ms ease both;
+}
+
+.cinematic-flashback__line.is-visible {
+  animation: narrative-line-in 300ms ease both;
+}
+
+.cinematic-flashback.is-fading-out {
+  animation: cinematic-fade-out 340ms ease both;
+}
+
+.retro-journey.is-visible {
+  animation: narrative-journey-in 420ms ease both;
+}
+
+.autoplay-panel[data-mode="running"] .autoplay-progress__fill {
+  animation: autoplay-progress-glow 1.6s ease-in-out infinite;
+}
+
+.cta-animate {
+  animation:
+    cta-pulse-tilt 1.85s ease-in-out infinite,
+    cta-glow 1.85s ease-in-out infinite;
+}
+
+.avatar-card[data-speaking="true"] {
+  animation: avatar-breathe 1.6s ease-in-out infinite;
+  box-shadow:
+    0 24px 56px rgba(0, 0, 0, 0.22),
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    0 0 36px rgba(214, 181, 141, 0.24);
+}
+
+.avatar-card[data-speaking="true"] .avatar-card__halo {
+  animation: halo-pulse 1.6s ease-in-out infinite;
+}
+
+.avatar-card[data-speaking="true"] .avatar-figure__photo {
+  animation: portrait-pulse 1.6s ease-in-out infinite;
+}
+
+.choice-card,
+.media-card,
+.action-button,
+.theme-pill,
+.action-link {
+  will-change: transform;
+}
+
+@keyframes scene-fade {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scene-visual-out {
+  0% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 0.55;
+    transform: scale(1.01);
+  }
+}
+
+@keyframes scene-visual-in {
+  0% {
+    opacity: 0.56;
+    transform: scale(1.08);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes panel-expand {
+  0% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes narrative-btn-in {
+  0% {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cinematic-photo-in {
+  0% {
+    opacity: 0;
+    transform: translateY(8px) scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes cinematic-fade-out {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.015);
+  }
+}
+
+@keyframes narrative-line-in {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes narrative-journey-in {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes avatar-breathe {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes halo-pulse {
+  0%,
+  100% {
+    transform: scale(0.98);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.04);
+    opacity: 1;
+  }
+}
+
+@keyframes portrait-pulse {
+  0%,
+  100% {
+    transform: scale(1.005);
+    filter: saturate(1);
+  }
+  50% {
+    transform: scale(1.015);
+    filter: saturate(1.03);
+  }
+}
+
+@keyframes autoplay-progress-glow {
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.08);
+  }
+}
+
+@keyframes next-scene-highlight {
+  0% {
+    transform: translateY(0) scale(1);
+    background: rgba(255, 255, 255, 0.54);
+    box-shadow: 0 0 0 rgba(151, 112, 68, 0);
+  }
+  45% {
+    transform: translateY(-1px) scale(1.03);
+    background: rgba(191, 151, 104, 0.26);
+    box-shadow: 0 10px 22px rgba(151, 112, 68, 0.32);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    background: rgba(255, 255, 255, 0.54);
+    box-shadow: 0 0 0 rgba(151, 112, 68, 0);
+  }
+}
+
+@keyframes final-cta-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes final-contact-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cta-pulse-tilt {
+  0% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.055) rotate(1deg);
+    opacity: 0.95;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes cta-glow {
+  0% {
+    box-shadow: 0 0 0 rgba(233, 78, 119, 0);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(233, 78, 119, 0.35);
+  }
+  100% {
+    box-shadow: 0 0 0 rgba(233, 78, 119, 0);
+  }
+}
